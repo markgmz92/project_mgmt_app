@@ -1,4 +1,4 @@
-const { projects, clients } = require('./SampleData.js');
+const { projects, clients } = require('../SampleData.js');
 const {
   GraphQLObjectType,
   GraphQLID,
@@ -6,6 +6,7 @@ const {
   GraphQLSchema
 } = require('graphql');
 
+//Client Type
 const ClientType = new GraphQLObjectType({
   name: 'Client',
   fields: () => ({
@@ -29,6 +30,4 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
-export const schema = new GraphQLSchema({
-  query: RootQuery
-});
+module.exports = new GraphQLSchema({ query: RootQuery });
